@@ -40,6 +40,5 @@
 * When scenario "Display of currencies for selected country" is executed, produces the ouput of countries with their currencies on the console 
 
 
-### Cucumber Reports: net.masterthought - This will generate two reports ###
-*	Cucumber Pretty (folder - "target\site\cucumber-pretty"), file - "index.html"
+### Cucumber Reports:  ###
 *	Cucumber Advance (folder - "target\site\extent-reports"), file - "index.html"
