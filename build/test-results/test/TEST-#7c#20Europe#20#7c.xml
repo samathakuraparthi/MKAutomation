@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="| Europe |" tests="4" skipped="0" failures="2" errors="0" timestamp="2021-07-22T17:25:24" hostname="TR-6C9GZY2" time="25.138">
+  <properties/>
+  <testcase name="Given user clicks on UK flag on homepage header" classname="| Europe |" time="0.0"/>
+  <testcase name="When user gets list of countries for region &quot;Europe&quot;" classname="| Europe |" time="0.0"/>
+  <testcase name="Then user prints currency for each country" classname="| Europe |" time="0.001">
+    <failure message="org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document&#10;  (Session info: chrome=91.0.4472.164)&#10;For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference&#10;Build info: version: '4.0.0-beta-4', revision: '29f46d02dd'&#10;System info: host: 'TR-6C9GZY2', ip: '192.168.0.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [b3dd98a0867deb32f408e01308b628ec, executeScript {script=arguments[0].click();, args=[{ELEMENT=1a9b82eb-b38b-4ac6-955f-391e7f2ba2b1, element-6066-11e4-a52e-4f735466cecf=1a9b82eb-b38b-4ac6-955f-391e7f2ba2b1}]}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.164, chrome: {chromedriverVersion: 91.0.4472.101 (af52a90bf870..., userDataDir: C:\Users\u0171402\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:58377}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:58377/devtoo..., se:cdpVersion: 91.0.4472.164, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: b3dd98a0867deb32f408e01308b628ec" type="org.openqa.selenium.StaleElementReferenceException">org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=91.0.4472.164)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
+Build info: version: '4.0.0-beta-4', revision: '29f46d02dd'
+System info: host: 'TR-6C9GZY2', ip: '192.168.0.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [b3dd98a0867deb32f408e01308b628ec, executeScript {script=arguments[0].click();, args=[{ELEMENT=1a9b82eb-b38b-4ac6-955f-391e7f2ba2b1, element-6066-11e4-a52e-4f735466cecf=1a9b82eb-b38b-4ac6-955f-391e7f2ba2b1}]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.164, chrome: {chromedriverVersion: 91.0.4472.101 (af52a90bf870..., userDataDir: C:\Users\u0171402\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:58377}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:58377/devtoo..., se:cdpVersion: 91.0.4472.164, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: b3dd98a0867deb32f408e01308b628ec
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:162)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:137)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:612)
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:546)
+	at com.mk.pageObjects.HomePage.getCountryCurrencies(HomePage.java:118)
+	at com.mk.stepDefinitions.HomePageSteps.userPrintsCurrencyForEachCountry(HomePageSteps.java:62)
+	at ✽.Then user prints currency for each country(features/countryCurrencies.feature:8)
+</failure>
+  </testcase>
+  <testcase name="classMethod" classname="| Europe |" time="42.398">
+    <failure message="org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document&#10;  (Session info: chrome=91.0.4472.164)&#10;For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference&#10;Build info: version: '4.0.0-beta-4', revision: '29f46d02dd'&#10;System info: host: 'TR-6C9GZY2', ip: '192.168.0.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [b3dd98a0867deb32f408e01308b628ec, executeScript {script=arguments[0].click();, args=[{ELEMENT=1a9b82eb-b38b-4ac6-955f-391e7f2ba2b1, element-6066-11e4-a52e-4f735466cecf=1a9b82eb-b38b-4ac6-955f-391e7f2ba2b1}]}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.164, chrome: {chromedriverVersion: 91.0.4472.101 (af52a90bf870..., userDataDir: C:\Users\u0171402\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:58377}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:58377/devtoo..., se:cdpVersion: 91.0.4472.164, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: b3dd98a0867deb32f408e01308b628ec" type="org.openqa.selenium.StaleElementReferenceException">org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=91.0.4472.164)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
+Build info: version: '4.0.0-beta-4', revision: '29f46d02dd'
+System info: host: 'TR-6C9GZY2', ip: '192.168.0.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [b3dd98a0867deb32f408e01308b628ec, executeScript {script=arguments[0].click();, args=[{ELEMENT=1a9b82eb-b38b-4ac6-955f-391e7f2ba2b1, element-6066-11e4-a52e-4f735466cecf=1a9b82eb-b38b-4ac6-955f-391e7f2ba2b1}]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.164, chrome: {chromedriverVersion: 91.0.4472.101 (af52a90bf870..., userDataDir: C:\Users\u0171402\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:58377}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:58377/devtoo..., se:cdpVersion: 91.0.4472.164, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: b3dd98a0867deb32f408e01308b628ec
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:162)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:137)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:612)
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:546)
+	at com.mk.pageObjects.HomePage.getCountryCurrencies(HomePage.java:118)
+	at com.mk.stepDefinitions.HomePageSteps.userPrintsCurrencyForEachCountry(HomePageSteps.java:62)
+	at ✽.Then user prints currency for each country(features/countryCurrencies.feature:8)
+</failure>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Starting ChromeDriver 91.0.4472.101 (af52a90bf87030dd1523486a1cd3ae25c5d76c9b-refs/branch-heads/4472@{#1462}) on port 37024
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+Jul 22, 2021 6:25:10 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+Jul 22, 2021 6:25:10 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+INFO: Found exact CDP implementation for version 91
+]]></system-err>
+</testsuite>

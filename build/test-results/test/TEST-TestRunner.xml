@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TestRunner" tests="0" skipped="0" failures="0" errors="0" timestamp="1970-01-01T00:00:00" hostname="TR-6C9GZY2" time="0.0">
+  <properties/>
+  <system-out><![CDATA[Feature: Country Currencies verification
+  As a user I should able to select countries and output their currencies
+
+  @sam
+  Scenario Outline: Display of currencies for selected country # features/countryCurrencies.feature:5
+    Given user clicks on UK flag on homepage header
+    When user gets list of countries for region "<region>"
+    Then user prints currency for each country
+
+    Examples: 
+Size of List: 4
+Countries under Africa
+EG-EGP
+GH-GHâ‚µ
+NG-â‚¦
+ZA-R
+
+  @sam
+  Scenario Outline: Display of currencies for selected country # features/countryCurrencies.feature:11
+    Given user clicks on UK flag on homepage header            # HomePageSteps.clicksOnUKFlagOnHomepageHeader()
+    When user gets list of countries for region "Africa"       # HomePageSteps.userGetsListOfCountriesForRegion(String)
+    Then user prints currency for each country                 # HomePageSteps.userPrintsCurrencyForEachCountry()
+
+1 Scenarios (1 passed)
+3 Steps (3 passed)
+0m58.293s
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

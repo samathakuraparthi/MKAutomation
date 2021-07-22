@@ -1,0 +1,45 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'io.cucumber:cucumber-java:1.2.6'
+    testImplementation 'io.cucumber:cucumber-junit:1.2.6'
+    testImplementation 'org.junit.vintage:junit-vintage-engine:5.7.2'
+    implementation 'org.seleniumhq.selenium:selenium-java:4.0.0-beta-4'
+    implementation 'io.github.bonigarcia:webdrivermanager:4.2.0'
+    testImplementation group: 'io.cucumber', name: 'cucumber-plugin', version: '6.10.4'
+    testImplementation 'info.cukes:cucumber-picocontainer:1.2.6'
+    testImplementation 'com.vimalselvam:cucumber-extentsreport:3.1.1'
+    testImplementation 'com.aventstack:extentreports:3.1.1'
+}
+
+task cucumber() {
+    dependsOn assemble, testClasses
+    doLast {
+        javaexec {
+            main = "cucumber.api.cli.Main"
+            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+            args = [
+                    '--plugin', 'pretty',
+                    '--plugin', 'html:target/cucumber-report.html',
+                    '--plugin', 'com.vimalselvam.cucumber.listener.ExtentCucumberFormatter:target/site/extent-reports/index.html',
+                    '--glue', 'com.mk.stepDefinitions',
+                    'src/test/resources']
+        }
+
+    }
+}
+
+configurations {
+    cucumberRuntime {
+        extendsFrom testImplementation
+    }
+}
