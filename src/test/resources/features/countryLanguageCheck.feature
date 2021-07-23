@@ -1,3 +1,4 @@
+@mkTest
 Feature:Country Language verification test
 
   Scenario Outline: Display of Language options for selected country
