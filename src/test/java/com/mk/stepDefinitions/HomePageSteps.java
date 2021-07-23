@@ -61,7 +61,7 @@ public class HomePageSteps extends BaseSteps {
     public void userPrintsCurrencyForEachCountry() {
         try {
             homePage.getCountryCurrencies(countriesList);
-        } catch (InterruptedException | UnsupportedEncodingException e) {
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }

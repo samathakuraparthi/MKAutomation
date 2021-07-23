@@ -5,7 +5,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "classpath:features",
         glue = {"com/mk/stepDefinitions"},
-        tags = {"@sam"},
+        tags = {"@mkTest"},
         plugin = {"pretty",
                 "html:target/site/cucumber-pretty",
                 "com.vimalselvam.cucumber.listener.ExtentCucumberFormatter:target/site/extent-reports/index.html"},

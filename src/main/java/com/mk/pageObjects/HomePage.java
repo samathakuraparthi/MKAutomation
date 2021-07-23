@@ -6,8 +6,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
 
-import java.io.PrintStream;
-import java.io.UnsupportedEncodingException;
 import java.util.*;
 
 public class HomePage extends BasePage {
@@ -70,25 +68,20 @@ public class HomePage extends BasePage {
         }
     }
 
-
     public List<String> getCountriesForGivenRegion(String regionName) {
         List<WebElement> countriesList = driver.findElements(By.xpath("//button[text()='" + regionName + "']// ancestor::li[contains(@class,'country-region-items')]//div[contains(@class,'country-name')]//a"));
         List<String> countryValues = new ArrayList<String>();
         System.out.println("Size of List: " + countriesList.size());
-        System.out.print("Countries under " + regionName + "\n");
         for (WebElement e : countriesList) {
             countryValues.add(e.getText());
         }
         return countryValues;
     }
 
-    public void getCountryCurrencies(List<String> countriesList) throws InterruptedException, UnsupportedEncodingException {
-
+    public void getCountryCurrencies(List<String> countriesList) throws InterruptedException {
         for (String country : countriesList) {
             Thread.sleep(2000);
-
-            List<WebElement> languages = driver.findElements(By.xpath("//*[@name='" + country + "']//ancestor::li[contains(@class,'country-selector-items')]//a[contains(@class,'multi-language')][1]"));
-
+            List<WebElement> languages = driver.findElements(By.xpath("//*[@name='" + country + "']//ancestor::li[contains(@class,'country-selector-items')]//a[contains(@class,'multi-language') and contains(text(),'(en)')][1]"));
             for (WebElement language : languages) {
                 JavascriptExecutor executor = (JavascriptExecutor) driver;
                 executor.executeScript("arguments[0].click();", language);
@@ -100,9 +93,8 @@ public class HomePage extends BasePage {
                     closeWindowButton.get(0).click();
                 }
                 System.out.println(selectedCountry.getText().replace(" ", "-"));
-//                PrintStream out = new PrintStream(System.out, true, "UTF-8");
+//                PrintStream out = new PrintStream(System.out, true, StandardCharsets.UTF_8);
 //                out.println(selectedCountry.getText().replace(" ", "-"));
-
                 clickFlag();
             }
         }
@@ -112,7 +104,6 @@ public class HomePage extends BasePage {
         //converts List into String and checks string are equal or not
         return ls1.toString().contentEquals(ls2.toString());
     }
-
 
     public List<String> getLanguagesForCountry(String countryName) {
         String languageElement = "//div[@name='" + countryName + "']//following-sibling:: div/ul/li[contains(@class,'multi-language-list-item')]";
