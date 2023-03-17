@@ -1,12 +1,12 @@
 package com.mk.stepDefinitions;
 
 import com.mk.cucumber.TestContext;
-import com.mk.managers.FileReadManager;
+import com.mk.managers.FileReaderManager;
 import com.mk.pageObjects.HomePage;
 import com.mk.util.CaptureScreenShort;
-import cucumber.api.Scenario;
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -24,7 +24,7 @@ public class Hooks {
 
     @Before
     public void setup() {
-        logger.info("------Scenarios running on Environment :" + FileReadManager.getInstance().getConfigFileReader().getProfile() + "-----");
+        logger.info("------Scenarios running on Environment :" + FileReaderManager.getInstance().getConfigFileReader().getProfile() + "-----");
 
     }
 

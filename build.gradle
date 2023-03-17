@@ -10,15 +10,15 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'io.cucumber:cucumber-java:1.2.6'
-    testImplementation 'io.cucumber:cucumber-junit:1.2.6'
-    testImplementation 'org.junit.vintage:junit-vintage-engine:5.7.2'
-    implementation 'org.seleniumhq.selenium:selenium-java:4.0.0-beta-4'
-    implementation 'io.github.bonigarcia:webdrivermanager:4.2.0'
-    testImplementation group: 'io.cucumber', name: 'cucumber-plugin', version: '6.10.4'
-    testImplementation 'info.cukes:cucumber-picocontainer:1.2.6'
-    testImplementation 'com.vimalselvam:cucumber-extentsreport:3.1.1'
-    testImplementation 'com.aventstack:extentreports:3.1.1'
+    testImplementation 'io.cucumber:cucumber-java:7.11.1'
+    testImplementation 'io.cucumber:cucumber-junit:7.11.1'
+    compileOnly group: 'io.cucumber', name: 'cucumber-jvm-deps', version: '1.0.6'
+    testImplementation 'org.junit.vintage:junit-vintage-engine:5.9.2'
+    implementation 'org.seleniumhq.selenium:selenium-java:4.8.1'
+    implementation 'io.github.bonigarcia:webdrivermanager:5.3.2'
+    testImplementation group: 'io.cucumber', name: 'cucumber-plugin', version: '7.2.3'
+    testImplementation group: 'io.cucumber', name: 'cucumber-picocontainer', version: '7.2.3'
+    testImplementation 'com.aventstack:extentreports:5.0.9'
 }
 
 task cucumber() {
@@ -30,7 +30,6 @@ task cucumber() {
             args = [
                     '--plugin', 'pretty',
                     '--plugin', 'html:target/cucumber-report.html',
-                    '--plugin', 'com.vimalselvam.cucumber.listener.ExtentCucumberFormatter:target/site/extent-reports/index.html',
                     '--glue', 'com.mk.stepDefinitions',
                     'src/test/resources']
         }

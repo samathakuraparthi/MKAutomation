@@ -20,7 +20,7 @@ public class WebDriverManager {
 
 
     public WebDriverManager() {
-        driverType = FileReadManager.getInstance().getConfigFileReader().getBrowser();
+        driverType = FileReaderManager.getInstance().getConfigFileReader().getBrowser();
     }
 
     public WebDriver getDriver() {
@@ -46,8 +46,8 @@ public class WebDriverManager {
             case CHROME:
                 try {
                     ChromeOptions options = new ChromeOptions();
-                    options.addArguments("start-maximized");
-                    io.github.bonigarcia.wdm.WebDriverManager.chromedriver().browserVersion("72.0.3626.6").setup();
+                    options.addArguments("start-maximized").addArguments("--remote-allow-origins=*");
+                    io.github.bonigarcia.wdm.WebDriverManager.chromedriver().browserVersion("111.0.5563.65").setup();
                     driver = new ChromeDriver(options);
                 } catch (Exception e) {
                     logger.error("-------- Error Occured while getting chrome------" + e.getMessage());
@@ -58,7 +58,7 @@ public class WebDriverManager {
                 driver = new InternetExplorerDriver();
                 break;
         }
-        driver.get(FileReadManager.getInstance().getConfigFileReader().getApplicationUrl());
+        driver.get(FileReaderManager.getInstance().getConfigFileReader().getApplicationUrl());
         driver.manage().window().maximize();
         return driver;
     }

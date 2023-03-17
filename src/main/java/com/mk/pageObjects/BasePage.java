@@ -1,6 +1,6 @@
 package com.mk.pageObjects;
 
-import com.mk.managers.FileReadManager;
+import com.mk.managers.FileReaderManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -16,7 +16,7 @@ public class BasePage {
    protected static final Logger logger = LoggerFactory.getLogger(BasePage.class);
     WebDriver driver;
 
-    long implicitWait = FileReadManager.getInstance().getConfigFileReader().getImplicitWait();
+    long time = FileReaderManager.getInstance().getConfigFileReader().getImplicitWait();
 
 
     public void waitForPageLoadComplete() {
@@ -31,19 +31,19 @@ public class BasePage {
                     }
                 };
         Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
-                .withTimeout(Duration.ofSeconds(FileReadManager.getInstance().getConfigFileReader().getFluentWait()))
+                .withTimeout(Duration.ofSeconds(FileReaderManager.getInstance().getConfigFileReader().getFluentWait()))
                 .pollingEvery(Duration.ofSeconds(1))
                 .ignoring(NoSuchElementException.class);
         wait.until(pageLoadCondition);
     }
 
     public void waitForElementToBeClickable(WebDriver driver, WebElement element) {
-        WebDriverWait wait = new WebDriverWait(driver, implicitWait);
+        WebDriverWait wait = new WebDriverWait(driver, (Duration.ofSeconds(time)));
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
     public void waitForVisibilityOfElement(WebDriver driver, WebElement element) {
-        WebDriverWait wait = new WebDriverWait(driver, implicitWait);
+        WebDriverWait wait = new WebDriverWait(driver, (Duration.ofSeconds(time)));
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
