@@ -6,9 +6,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(features = "classpath:features",
         glue = {"com/mk/stepDefinitions"},
         tags = "@mkTest",
-        plugin = {"pretty",
-                "html:target/site/cucumber-pretty",
-                "com.vimalselvam.cucumber.listener.ExtentCucumberFormatter:target/site/extent-reports/index.html"},
+        plugin = {"me.jvt.cucumber.report.PrettyReports:target/cucumber"},
         monochrome = true)
 public class TestRunner {
 
